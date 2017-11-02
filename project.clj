@@ -64,6 +64,10 @@
 
   :test-paths ["test/clj"]
 
+  :test-selectors {:default (complement :integration)
+                   :integration :integration
+                   :all (constantly true)}
+
   :cljsbuild
   {:builds {:min
             {:source-paths ["src/cljs" "src/cljc" "env/prod/cljs"]
